@@ -1,0 +1,311 @@
+
+/* Accessible CSS for Portfolio */
+
+/* Base styles for high contrast and readability */
+html {
+	scroll-behavior: smooth; /* Smooth scrolling for all scroll operations */
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif; /* Readable sans-serif font */
+	color: #000000; /* Black text for maximum contrast */
+	background-color: #ffffff; /* White background */
+	line-height: 1.6; /* Improved readability */
+	font-size: 16px; /* Base font size for accessibility */
+}
+
+/* Ensure headings have good contrast */
+h1, h2, h3 {
+	color: #000000;
+}
+
+/* Header and Navigation Styling */
+header {
+	background-color: #007bff; /* Professional blue background */
+	color: #ffffff; /* White text for contrast */
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	font-size: 2.5em; /* Larger, prominent title */
+	font-weight: bold;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 0 0;
+	display: flex;
+	justify-content: center;
+	gap: 20px; /* Space between nav items */
+}
+
+nav a {
+	color: #ffffff; /* White links */
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+nav a:focus {
+	outline: 2px solid #ffffff; /* Visible focus on white bg */
+	outline-offset: 2px;
+}
+
+/* Hamburger Menu Styles (JS only) */
+.nav-toggle {
+	display: none; /* Hidden by default */
+}
+
+.nav-toggle-label {
+	display: none;
+	font-size: 2em;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	cursor: pointer;
+	z-index: 2000;
+	background: #ff0 !important;
+	color: #000 !important;
+	border: 2px solid #f00 !important;
+	padding: 0.2em 0.5em;
+	border-radius: 4px;
+}
+
+/* Mobile Navigation Toggle */
+nav {
+	max-height: 500px;
+	overflow: hidden;
+	transition: max-height 0.3s ease-in-out;
+}
+
+/* nav.active is only used for mobile - desktop nav is always visible */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+	.nav-toggle-label {
+		display: block;
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		z-index: 3001;
+	}
+	header {
+		position: relative;
+		z-index: 3000;
+	}
+	nav {
+		position: static;
+	}
+	nav ul {
+		display: none;
+		flex-direction: column;
+		position: fixed;
+		top: 60px;
+		left: 0;
+		width: 100vw;
+		background: #007bff;
+		padding: 1.5em 0 1em 0;
+		z-index: 3002;
+		box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+	}
+	nav.active ul {
+		display: flex !important;
+	}
+}
+    
+	nav li {
+		padding: 10px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	}
+    
+	nav li:last-child {
+		border-bottom: none;
+	}
+    
+	header {
+		position: relative;
+	}
+
+
+/* About Me Section Styling */
+#about {
+	text-align: center; /* Center-align text for a clean, professional look */
+	padding: 40px 20px; /* Generous padding for spacing */
+	margin: 20px auto; /* Vertical margin and horizontal centering */
+	max-width: 800px; /* Constrain width for better readability */
+}
+
+#about h2 {
+	font-size: 2em; /* Larger heading for emphasis */
+	margin-bottom: 20px; /* Space below heading */
+	text-align: center; /* Ensure heading is centered */
+}
+
+#about p {
+	font-size: 1.2em; /* Slightly larger paragraph text for readability */
+	line-height: 1.8; /* Improved line spacing */
+	max-width: 600px; /* Constrain width for better readability */
+	margin: 0 auto; /* Center the paragraph */
+	text-align: center; /* Ensure text is centered */
+}
+
+/* Projects Section Styling */
+#projects {
+	display: flex; /* Flexbox for card layout */
+	flex-wrap: wrap; /* Wrap to next line on smaller screens */
+	justify-content: center; /* Center the cards */
+	gap: 20px; /* Space between cards */
+	padding: 40px 20px; /* Padding around the section */
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Project Filter Buttons */
+.project-filters {
+	display: flex; /* Flexbox for button layout */
+	gap: 10px; /* Space between buttons */
+	margin-bottom: 30px; /* Space below filters */
+	flex-wrap: wrap; /* Wrap buttons on smaller screens */
+	justify-content: center; /* Center the buttons */
+}
+
+.filter-btn {
+	padding: 10px 20px; /* Button padding */
+	background-color: #e9ecef; /* Light gray background */
+	color: #000000; /* Black text */
+	border: 2px solid #007bff; /* Blue border */
+	-webkit-border-radius: 20px; /* Vendor prefix for WebKit */
+	-moz-border-radius: 20px; /* Vendor prefix for Mozilla */
+	border-radius: 20px; /* Rounded corners */
+	cursor: pointer; /* Pointer cursor */
+	font-size: 1em; /* Consistent size */
+	font-weight: bold; /* Bold text */
+	transition: all 0.3s ease; /* Smooth transition */
+}
+
+.filter-btn:hover {
+	background-color: #007bff; /* Blue background on hover */
+	color: #ffffff; /* White text on hover */
+}
+
+.filter-btn.active {
+	background-color: #007bff; /* Blue background when active */
+	color: #ffffff; /* White text when active */
+}
+
+.filter-btn:focus {
+	outline: 2px solid #0000ff; /* Visible focus outline */
+	outline-offset: 2px;
+}
+
+/* Projects Container */
+.projects-container {
+	display: flex; /* Flexbox for card layout */
+	flex-wrap: wrap; /* Wrap to next line on smaller screens */
+	justify-content: center; /* Center the cards */
+	gap: 20px; /* Space between cards */
+	width: 100%; /* Full width */
+}
+
+#projects article {
+	background-color: #f9f9f9; /* Light background for card effect */
+	border: 1px solid #ddd; /* Subtle border */
+	-webkit-border-radius: 8px; /* Vendor prefix for WebKit */
+	-moz-border-radius: 8px; /* Vendor prefix for Mozilla */
+	border-radius: 8px; /* Rounded corners */
+	padding: 20px; /* Internal padding */
+	margin: 10px; /* Margin for spacing */
+	max-width: 300px; /* Constrain card width */
+	text-align: center; /* Center text */
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Vendor prefix for WebKit */
+	-moz-box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Vendor prefix for Mozilla */
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+	transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+#projects article.visible {
+	opacity: 1; /* Full opacity when visible */
+	transform: scale(1); /* Normal size when visible */
+}
+
+#projects article.hidden {
+	display: none; /* Hide the card */
+}
+
+#projects h3 {
+	margin-top: 0; /* Remove top margin */
+}
+
+#projects img {
+	max-width: 100%; /* Responsive image */
+	height: auto; /* Maintain aspect ratio */
+	-webkit-border-radius: 4px; /* Vendor prefix for WebKit */
+	-moz-border-radius: 4px; /* Vendor prefix for Mozilla */
+	border-radius: 4px; /* Slight rounding */
+}
+
+#projects figcaption {
+	font-size: 0.9em; /* Smaller text */
+	color: #666; /* Muted color */
+	margin: 10px 0; /* Margin for spacing */
+}
+
+/* Skills Section Styling */
+#skills {
+	padding: 40px 20px; /* Section padding */
+	text-align: center; /* Center alignment */
+}
+
+#skills h2 {
+	font-size: 2em; /* Larger heading */
+	margin-bottom: 20px; /* Space below */
+}
+
+#skills ul {
+	list-style: none; /* Remove default bullets */
+	padding: 0;
+	display: flex; /* Flex for layout */
+	flex-wrap: wrap; /* Wrap on smaller screens */
+	justify-content: center; /* Center items */
+	gap: 15px; /* Space between items */
+}
+
+#skills li {
+	background-color: #e9ecef; /* Light background for pill effect */
+	padding: 10px 20px; /* Padding for comfort */
+	-webkit-border-radius: 20px; /* Vendor prefix for WebKit */
+	-moz-border-radius: 20px; /* Vendor prefix for Mozilla */
+	border-radius: 20px; /* Rounded corners */
+	font-weight: bold; /* Bold text */
+	position: relative; /* For pseudo-element positioning */
+}
+
+#skills li::before {
+	content: "\2713 "; /* Checkmark icon */
+	color: #28a745; /* Green color for checkmark */
+	font-weight: bold;
+}
+
+/* Contact Section Styling */
+#contact {
+	padding: 40px 20px; /* Section padding */
+	text-align: center; /* Center alignment */
+}
+
+#contact h2 {
+	font-size: 2em; /* Larger heading */
+	margin-bottom: 20px; /* Space below */
+}
+
+	#contact form {
+		max-width: 500px; /* Constrain form width */
+		margin: 0 auto; /* Center form */
+		display: flex; /* Flex for layout */
+	}

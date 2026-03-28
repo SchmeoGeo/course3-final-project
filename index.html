@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front End Developer Portfolio</title>
+    <link rel="stylesheet" href="styles-new.css">
+</head>
+<body>
+        <header>
+            <span class="nav-toggle-label" tabindex="0" aria-controls="main-nav" aria-expanded="false">&#9776;</span>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio. Here you can learn more about me and my work.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Git</li>
+                <li>Responsive Design</li>
+                <li>API Integration</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="web">Web Design</button>
+                <button class="filter-btn" data-category="ecommerce">E-Commerce</button>
+                <button class="filter-btn" data-category="frontend">Frontend</button>
+            </div>
+            <div class="projects-container">
+                <article class="project-card" data-category="web">
+                    <h3>Project 1</h3>
+                    <figure>
+                        <img src="project1.jpg" alt="Screenshot of Project 1, a responsive web application dashboard">
+                        <figcaption>Project 1: Responsive Dashboard</figcaption>
+                    </figure>
+                    <p>Description of project 1.</p>
+                </article>
+                <article class="project-card" data-category="ecommerce">
+                    <h3>Project 2</h3>
+                    <figure>
+                        <img src="project2.jpg" alt="Screenshot of Project 2, an e-commerce website homepage">
+                        <figcaption>Project 2: E-commerce Site</figcaption>
+                    </figure>
+                    <p>Description of project 2.</p>
+                </article>
+                    <article class="project-card" data-category="frontend">
+                        <h3>Frontend Sample Project</h3>
+                        <figure>
+                            <img src="https://via.placeholder.com/300x180?text=Frontend+Project" alt="Screenshot of a sample frontend project">
+                            <figcaption>Sample Frontend Project: Interactive UI Demo</figcaption>
+                        </figure>
+                        <p>This is a sample frontend project card. Click the image to view a larger version. Use this space to describe your frontend work, such as UI components, animations, or JavaScript features.</p>
+                    </article>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-image" src="" alt="Enlarged project image">
+        <div class="lightbox-caption"></div>
+    </div>
+    
+        <script src="script-new.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
